@@ -5,15 +5,27 @@ def welcome(request):
 
 def restaurant_list(request):
 
-    context = {
+    mylist = [{ 'restaurant_name': 'ovo',
+    'food_type': 'vegan'
+    },
+    { 'restaurant_name': 'table otto',
+    'food_type': 'fancy'
+    },
+    { 'restaurant_name': 'joa',
+    'food_type': 'sushi'
+    }]
 
+    context = { 'rest': mylist
     }
     return render(request, 'list.html', context)
 
 
 def restaurant_detail(request):
 
-    context = {
+    myobject = {'restaurant_name': 'joa',
+        'food_type': 'sushi',
+        'desc': 'california roll'}
+    context = { 'rest': myobject
 
     }
     return render(request, 'detail.html', context)
